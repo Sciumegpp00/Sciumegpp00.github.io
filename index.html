@@ -1,1 +1,29 @@
-<h1>This is my website</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Portale Reclami 💌</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Portale Reclami di {{ nome }}</h1>
+    
+    <form @submit.prevent="inviaReclamo">
+      <label>Motivo del reclamo:</label><br>
+      <input v-model="nuovoReclamo" placeholder="Scrivi qui..." required>
+      <button>Invia</button>
+    </form>
+    
+    <h2>Lista dei reclami</h2>
+    <ul>
+      <li v-for="(r, i) in reclami" :key="i">
+        {{ r.testo }} <span>📅 {{ r.data }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
