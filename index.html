@@ -9,19 +9,21 @@
 <body>
   <div id="app">
     <h1>Portale Reclami di {{ nome }}</h1>
-    
-    <form @submit.prevent="inviaReclamo">
-      <label>Motivo del reclamo:</label><br>
-      <input v-model="nuovoReclamo" placeholder="Scrivi qui..." required>
-      <button>Invia</button>
-    </form>
-    
+
+    <!-- COMPONENTE FormReclamo -->
+    <form-reclamo @nuovo-reclamo="aggiungiReclamo"></form-reclamo>
+
     <h2>Lista dei reclami</h2>
     <ul>
-      <li v-for="(r, i) in reclami" :key="i">
-        {{ r.testo }} <span>📅 {{ r.data }}</span>
-      </li>
+      <reclamo-item 
+        v-for="(r, i) in reclami" 
+        :key="i" 
+        :r="r"
+        @rimuovi="rimuoviReclamo(i)">
+      </reclamo-item>
     </ul>
+
+    <button class="perdono" @click="perdonaTutti">💖 Perdona tutti i reclami</button>
   </div>
 
   <script src="script.js"></script>
