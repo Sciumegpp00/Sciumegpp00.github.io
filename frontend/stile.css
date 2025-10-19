@@ -1,0 +1,28 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background: #0b0b0b;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  input, button {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    background: white;
+    margin: 5px auto;
+    padding: 10px;
+    border-radius: 10px;
+    width: 60%;
+    box-shadow: 0 0 5px #ccc;
+  }
+  
